@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<!-- 
+Laura Davis
+20 December 2018
+-->
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Remove activation prompts for Office 2016</title>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <!-- My stylesheet -->
+  <link href="docs-style.css" rel="stylesheet" type="text/css">
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Libre+Franklin|Roboto:400,400i,700');
+</style> 
+</head>
+
+<body>
+<!-- jQuery, popper.js, and Bootstrap JS --> 
+<div class="iefix">    
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</div>
+  
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#5E0009;">
+  <a class="navbar-brand" href="https://missouristate.edu/"><img src="images/msu_logo.png" alt="Misssouri State logo"/></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="documentation.html">Documentation</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="http://localhost/ITSupport_website/support_ticket.php">Support tickets</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="http://localhost/ITSupport_website/ticket_dashboard.php">Support ticket dashboard</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="about.html">About us</a>
+      </li>
+    </ul>
+      <!-- SEARCH BAR
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+        -->
+  </div>
+
+</nav>
+  
+  <header class="coed-header">College of Education - Technical Support</header>
+  
+  <div class="main-container">
+  <div class="main">
+  <h1 id="remove-office-prompts">Remove activation prompts for Office 2016</h1>
+    
+    <p>Sometimes after installing and activating a Volume License copy of Office 2016, Windows will continue to prompt you to activate the product. This issue occurs because a version of Office has been installed on the system by the manufacturer or seller and was not completely removed before the Volume License version of Office 2016 was installed. This tutorial will teach you how to modify the registry to fix this error.</p>
+    
+    <p class="caution">Caution: This task contains steps that will tell you how to modify the registry. Note that serious problems might occur if you modify the registry incorrectly. Please make sure that you follow these steps carefully. In addition, it is a good idea to back up the registry before you modify it so if a problem occurs, you can restore the registry from back-up. This tutorial will show you how to back-up a registry value in later steps.</p>
+    
+    <p>For more information about how to back up and restore the registry, visit <a href="https://www.microsoft.com/en-us/">Microsoft’s website</a> or contact your IT department.</p>
+    
+    <h2 id="modify-registry">Modify the registry</h2>
+    
+      <p>To resolve this problem, you will export the following registry keys to a save destination and then delete them from the computer. This process will require you to export and then delete two separate values from the registry. </p>
+
+      <ol>
+        <li>Close the Office activation (Let’s get started) window.</li>
+        
+        <img alt="Screenshot of the Let's Get Started Window, which contains the options: Try, Buy, and Activate." src="images/office-prompts/activateWindow.png" width="400px" style="border:1px solid black; margin: 10px;"/>
+        
+        <li>Press <b>Windows+R</b> to bring up the <b>Run</b> dialog.</li>
+      
+        <li>In the <b>Run</b> dialog, type <code>regedit</code> and press Enter. A dialog box will pop-up asking if you want Registry Editor to make changes to your device. Click <b>Yes</b>.</li>
+        
+        <img alt="Screenshot of the regedit command in the run dialog." src="images/office-prompts/regedit_window.PNG" width="300px" style="border:1px solid black; margin: 10px;"/>
+        
+        <br>
+
+        <img alt="Screenshot of the User Account Control Dialog which says: Do you want to allow this app to make changes to your device? Registry Editor with the options Yes and No." src="images/office-prompts/regedit_uacPNG.png" width="300px" style="border:1px solid black; margin: 10px;"/>
+        
+        <li>After the registry window pops-up, locate the following key in the registry by clicking on the arrow next to each of these folders: 
+        <b><pre>
+        
+>HKEY_LOCAL_MACHINE 
+>SOFTWARE 
+>Wow6432Node 
+>Microsoft 
+>Office 
+>16.0 
+>Common 
+>OEM
+        </pre></b></li>
+        
+        <li>Click the <b>OEM</b> value folder to select it. At the top left of the registry window, point to <b>File</b>, then click <b>Export</b>. Save the key in a place that you will be able to locate later if you need to restore it. Save this key as <code>OEM1</code>.</li>
+        
+        <img alt="Screenshot of the Registry Editor menu with File dropdown and Export near the top highlighted." src="images/office-prompts/export_box.PNG" width="200px" style="border:1px solid black; margin: 10px;"/>
+        
+        <br>
+
+        <img alt="Screenshot of the Export Registry File window, where we are saving OEM1." src="images/office-prompts/SaveAsOEM1.PNG" width="400px" style="border:1px solid black; margin: 10px;"/>
+        
+        <li>After you have saved the registry key, ensure that the <b>OEM</b> folder is still selected. In the registry's top menu, point to <b>Edit</b>, then click <b>Delete</b>. </li>
+        
+        <li>A dialog box will pop-up to ask you if you want to delete this value. Click <b>Yes</b>. </li>
+        
+        <img alt="Screenshot of the Registry Editor menu with Edit dropdown and Delete highlighted." src="images/office-prompts/delete_reg.PNG" width="200px" style="border:1px solid black; margin: 10px;"/>
+        
+        <br>
+
+        <img alt="Screenshot of the Confirm Key Delete dialog which reads: Are you sure you want to permanently delete this key and all of its subkeys? With options Yes and No." src="images/office-prompts/AreYouSureDialog_reg.PNG" width="400px" style="border:1px solid black; margin: 10px;"/>
+        
+        <li>Locate the second key in the registry by clicking on the arrow next to each of these folders: 
+        <b><pre>
+>HKEY_LOCAL_MACHINE 
+>SOFTWARE 
+>Microsoft 
+>Office 
+>16.0 
+>Common 
+>OEM
+        </pre></b></li>
+        
+        <li>Click the <b>OEM</b> value folder to select it. At the top left of the registry window, point to <b>File</b>, then click <b>Export</b>. Save the key in a place that you will be able to locate later if you need to restore it. Save this key as <code>OEM2</code>.</li>
+        
+        <img alt="Screenshot of the Registry Editor menu with File dropdown and Export near the top highlighted." src="images/office-prompts/export_box.PNG" width="200px" style="border:1px solid black; margin: 10px;"/>
+        
+        <br>
+
+        <img alt="Screenshot of the Export Registry File window, where we are saving OEM2." src="images/office-prompts/SaveAsOEM2.PNG" width="400px" style="border:1px solid black; margin: 10px;"/>
+        
+        <li>After you have saved the registry key, ensure that the <b>OEM</b> folder is still selected. In the registry's top menu, point to <b>Edit</b>, then click <b>Delete</b>. </li>
+        
+        <li>A dialog box will pop-up to ask you if you want to delete this value. Click <b>Yes</b>. </li>
+        
+        <img alt="Screenshot of the Registry Editor menu with Edit dropdown and Delete highlighted." src="images/office-prompts/delete_reg.PNG" width="200px" style="border:1px solid black; margin: 10px;"/>
+        
+        <br>
+
+        <img alt="Screenshot of the Confirm Key Delete dialog which reads: Are you sure you want to permanently delete this key and all of its subkeys? With options Yes and No." src="images/office-prompts/AreYouSureDialog_reg.PNG" width="400px" style="border:1px solid black; margin: 10px;"/>
+        
+      </ol>
+    
+    <p>You have successfully modified the registry. Windows should no longer prompt you to activate Office. You may now close all open windows and return to the desktop. </p>
+
+    </div>
+  </div>
+  </body>
+</html>

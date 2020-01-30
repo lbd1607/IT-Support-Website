@@ -1,0 +1,269 @@
+﻿/*
+ * Laura Davis
+ * 20 December 2018
+ */
+
+/* Main styles used across all pages */
+body{
+  margin: 0px;
+  height: 100%;
+  max-height: 100%;
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Libre Franklin', sans-serif;
+}
+
+.iefix{
+  display:flex;
+}
+
+.nav-container{
+  margin: 0 auto;
+  display: flex;
+  min-width: 1430px;
+}
+
+nav.navbar{
+  border-radius: 0px;
+  border-width: 0px;
+  margin: 0;
+  padding: 0;
+}
+
+nav.navbar .navbar-brand{
+  color: #fff !important;
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 15px;
+}
+
+nav.navbar li.nav-item{
+  margin-right: 5px;
+  padding: 0;
+  margin: 0;
+}
+
+li.nav-item a{
+  padding: 15px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+li.nav-item a:hover:not(.active){
+  color: #fff !important;
+  background-color: #EB002B !important;
+  transition: 0.2s;
+}
+
+.coed-header{
+  margin: 0 auto;
+  display: inherit;
+  padding: 20px 20px;
+  height: 50px;
+  line-height: 10px;
+  color: #5E0009;
+  letter-spacing: 0.2px;
+  font-size: 16pt;
+  font-family: "Georgia";
+  border-bottom: 1px solid #5E0009;
+  background-color: whitesmoke;
+}
+
+@media {
+  
+}
+
+/* Styles used on landing page */
+
+.split {
+  height: 70%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 1;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.left {
+  left: 0;
+  background-color: #111;
+  color: whitesmoke;
+  position: fixed;
+}
+
+.right {
+  right: 0;
+  background-color: #fff;
+  color: #111;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.bottom {
+  width: 100%;
+  height: 25%;
+  top: 75%;
+  background-color: #0093B2;
+  color: whitesmoke;
+}
+
+.btn.btn-lg.btn-block.btn-outline-light.one{
+  border-color: #0093B2;
+  font-weight: bold;
+}
+
+.btn.btn-lg.btn-block.btn-outline-light.one:hover{
+  background-color: #0093B2;
+  color: #111;
+}
+
+.btn.btn-lg.btn-block.btn-outline-dark.one{
+  border-color: #0093B2;
+  color: #111;
+  font-weight: bold;
+}
+
+.btn.btn-lg.btn-block.btn-outline-dark.one:hover{
+  background-color: #0093B2;
+  color: whitesmoke;
+}
+
+.btn.btn-lg.btn-block.btn-outline-light.two{
+  border-color: whitesmoke;
+  color: #111;
+  font-weight: bold;
+  color: whitesmoke;
+}
+
+.btn.btn-lg.btn-block.btn-outline-light.two:hover{
+  background-color: whitesmoke;
+  color: #0093B2;
+}
+
+/* Styles used on pages other than landing page */
+
+.main-container{
+  margin: 0 auto;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  max-width: 1000px;
+  padding: 30px;
+}
+
+.main{
+  padding: 20px 50px;
+}
+
+.main h1{
+  color: #0093B2;
+  border-top: 6px solid #0093B2;
+  padding-top: 12px;
+  letter-spacing: 1pt;
+  margin-bottom: 20px;
+}
+
+.main h2{
+  color: #333;
+  font-family: "Roboto", sans-serif;
+  font-size: 22pt;
+}
+
+p, li{
+  letter-spacing: 0.2pt;
+}
+
+.contact-table{
+  background-color: #0093B2 !important;
+  color: #fff;
+  margin-bottom: 20px;
+  width: 500px;
+}
+
+td{
+  padding: 5px;
+  border-bottom: 1px solid #fff;
+}
+
+.mainrow{
+  font-size: 14pt;
+  letter-spacing: 0.5pt;
+  padding: 10px;
+  border-bottom: 5px solid #fff;
+}
+
+.label{
+  width: 80px;
+  background-color: #60b8ca;
+  color: #000;
+  text-align: right;
+  padding-right: 10px;
+  padding-left: 20px;
+}
+
+.info{
+  background-color: whitesmoke;
+  color: #000;
+  padding-left: 15px;
+  padding-right: 10px;
+  border-bottom: 1px solid #60b8ca;
+}
+
+.docs-h1{
+  color: #5E0009 !important;
+  border-top: 6px solid #5E0009 !important;
+  padding-top: 12px;
+  letter-spacing: 1pt;
+}
+
+.reg-h1{
+  color: #000 !important;
+  border-top: 0px !important;
+  letter-spacing: 1pt;
+  margin-bottom: 20px;
+}
+
+.btn.btn-primary.btn-lg.btn-block.cust{
+  background-color: #0093B2 !important;
+  color: #fff;
+  border-color: #0093B2 !important;
+}
+
+.btn.btn-primary.btn-lg.btn-block.cust:hover{
+  background-color: #007891 !important;
+  color: #fff;
+  border-color: #007891 !important;
+}
+
+.note{
+  font-weight: bold;
+  color: #0070c0;
+}
+
+.caution{
+  font-weight: bold;
+  color: #ed7d00;
+}
+
+.warning{
+  font-weight: bold;
+  color: #e60000;
+}
+
+.table-responsive{
+  margin-top: 20px !important;
+  margin: 50px;
+  width: inherit;
+  padding: 30px;
+}
+
+.dashboard{
+  margin-top: 20px;
+  margin-left: 20px;
+}
