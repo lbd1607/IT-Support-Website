@@ -46,19 +46,19 @@ class Ticket{
     $this->status = $this->mysqliData['status'];
   }
 
-  //Get ID of playlist
+  //Get ID of ticket
   public function getId() {
     return $this->id;
   }
 
-  //Get the song IDs in this playlist
+  //Get the ticket IDs of this ticketNo
   public function getTicketNo() {
 
     $query = mysqli_query($this->conn, "SELECT ticketNo FROM support_tickets WHERE ticketNo='$this->id'");
 
     $array = array();
 
-    //Autoincrements to assign songIDs to songs. Stored as an array
+    //Autoincrements to assign ticketNos to tickets. Stored as an array
     while($row = mysqli_fetch_array($query)) {
       array_push($array, $row['ticketNo']);
     }
@@ -67,42 +67,42 @@ class Ticket{
 
   }
 
-  //Get playlist name
+  //Get email of person who filed ticket
   public function getEmail() {
     return $this->email;
   }
 
-  //Get playlist name
+  //Get name of person who filed ticket
   public function getName() {
     return $this->name;
   }
 
-  //Get owner (user) of playlist
+  //Get phone of person who filed ticket
   public function getPhone() {
     return $this->owner;
   }
 
-  //Get owner (user) of playlist
+  //Get location of person who filed ticket
   public function getLocation() {
     return $this->location;
   }
 
-  //Get owner (user) of playlist
+  //Get available times of person who filed ticket
   public function getAvailTime() {
     return $this->availTime;
   }
 
-  //Get owner (user) of playlist
+  //Get available dates of person who filed ticket
   public function getAvailDate() {
     return $this->availDate;
   }
 
-  //Get owner (user) of playlist
+  //Get description of issue from ticket
   public function getDescription() {
     return $this->description;
   }
 
-  //Get owner (user) of playlist
+  //Get status of ticket (open, in progress, closed)
   public function getStatus() {
     return $this->status;
   }
